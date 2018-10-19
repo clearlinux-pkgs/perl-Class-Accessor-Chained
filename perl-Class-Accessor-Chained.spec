@@ -4,12 +4,13 @@
 #
 Name     : perl-Class-Accessor-Chained
 Version  : 0.01
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl(Class::Accessor)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Accessor)
 
