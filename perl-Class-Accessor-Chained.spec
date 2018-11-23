@@ -4,7 +4,7 @@
 #
 Name     : perl-Class-Accessor-Chained
 Version  : 0.01
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Summary  : No detailed summary available
@@ -68,8 +68,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/Class/Accessor/Chained.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Class/Accessor/Chained/Fast.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Class/Accessor/Chained.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Class/Accessor/Chained/Fast.pm
 
 %files dev
 %defattr(-,root,root,-)
