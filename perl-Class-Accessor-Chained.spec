@@ -4,12 +4,13 @@
 #
 Name     : perl-Class-Accessor-Chained
 Version  : 0.01
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Class-Accessor-Chained-perl = %{version}-%{release}
 Requires: perl(Class::Accessor)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Accessor)
@@ -26,19 +27,30 @@ __PACKAGE__->mk_accessors(qw( foo bar baz ));
 Summary: dev components for the perl-Class-Accessor-Chained package.
 Group: Development
 Provides: perl-Class-Accessor-Chained-devel = %{version}-%{release}
+Requires: perl-Class-Accessor-Chained = %{version}-%{release}
 
 %description dev
 dev components for the perl-Class-Accessor-Chained package.
 
 
+%package perl
+Summary: perl components for the perl-Class-Accessor-Chained package.
+Group: Default
+Requires: perl-Class-Accessor-Chained = %{version}-%{release}
+
+%description perl
+perl components for the perl-Class-Accessor-Chained package.
+
+
 %prep
 %setup -q -n Class-Accessor-Chained-0.01
+cd %{_builddir}/Class-Accessor-Chained-0.01
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -48,7 +60,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -68,10 +80,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Class/Accessor/Chained.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Class/Accessor/Chained/Fast.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Class::Accessor::Chained.3
 /usr/share/man/man3/Class::Accessor::Chained::Fast.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Class/Accessor/Chained.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Class/Accessor/Chained/Fast.pm
