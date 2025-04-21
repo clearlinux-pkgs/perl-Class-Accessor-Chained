@@ -7,7 +7,7 @@
 #
 Name     : perl-Class-Accessor-Chained
 Version  : 0.01
-Release  : 36
+Release  : 37
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
 Summary  : No detailed summary available
